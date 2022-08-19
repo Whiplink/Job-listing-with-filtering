@@ -1,0 +1,241 @@
+.attribution { display: none; font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(180, 52%, 96%);
+  font-weight: 500;
+}
+
+body, input, button {
+  font-family: 'League Spartan', sans-serif;
+}
+
+.container {
+  padding: 0 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.bg-header {
+  background-color: hsl(180, 29%, 50%);
+  background-image: url('./images/bg-header-mobile.svg');
+  width: 100%;
+  height: 156px;
+  background-size: cover;
+  background-position: center;
+}
+
+.filter__container {
+  display: flex;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 255, 0.158);
+  border-radius: 8px;
+  transform: translateY(-50%);
+}
+.filter__list {
+  flex: 1;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.filter {
+  display: flex;
+  border-radius: 3px;
+  overflow: hidden;
+  width: fit-content;
+  /* background-color: red; */
+  justify-content: center;
+  align-items: center;
+  /* padding: 10px; */
+}
+.filter > p {
+  background-color: hsl(180, 31%, 95%);
+  color: hsl(180, 29%, 50%);
+  font-weight: 700;
+  /* padding: 5px; */
+  height: 100%;
+  /* border-radius: 3px; */
+  display: grid;
+  place-items: center;
+  padding: 0 8px;
+}
+
+.remove__container {
+  background-color: hsl(180, 29%, 50%);
+  /* height: 100%; */
+  width: 28px;
+  aspect-ratio: 1/1;
+  /* padding: 5px; */
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.remove__container:hover {
+  background-color: hsl(180, 14%, 20%);
+}
+.remove__container > img {
+  display: block;
+}
+
+#clear {
+  display: grid;
+  place-items: center;
+  color: hsl(180, 8%, 52%);
+  font-weight: 700;
+  cursor: pointer;
+}
+#clear:hover{
+  color: hsl(180, 29%, 50%);
+  text-decoration: underline;
+}
+
+.job__container {
+  padding: 20px;
+  background-color: white;
+  position: relative;
+  border-radius: 8px;
+  margin-bottom: 50px;
+  box-shadow: 2px 10px 20px hsla(180, 29%, 50%, 0.3);
+}
+.job__container > img {
+  position: absolute;
+  width: 50px;
+  left: 15px;
+  top: 0;
+  transform: translateY(-50%);
+}
+.featured-bg {
+  /* background-color: red; */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 0;
+}
+.featured-bg::after {
+  content: '';
+  width: 5px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background-color: hsl(180, 29%, 50%);
+}
+
+.description {
+  display: grid;
+  gap: 15px;
+  margin-top: 20px;
+}
+.description > p:nth-child(2) {
+  color: hsl(180, 14%, 20%);
+  font-weight: 700;
+  cursor: pointer;
+  width: fit-content;
+}
+.description > p:nth-child(2):hover {
+  color: hsl(180, 29%, 50%);
+}
+.description > p:nth-child(3) {
+  color: hsl(180, 8%, 52%);
+}
+
+.company-name {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.company-name > p {
+  margin-right: 10px;
+  color: hsl(180, 29%, 50%);
+  font-weight: 700;
+}
+.new-tag, .featured-tag {
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-weight: 700;
+  color: hsl(180, 31%, 95%);
+  font-size: 0.8rem;
+}
+.new-tag {
+  background-color: hsl(180, 29%, 50%);
+}
+.featured-tag {
+  background-color: hsl(180, 14%, 20%);
+}
+
+
+.tags {
+  /* background-color: red; */
+  margin-top: 15px;
+  padding: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid gray;
+  gap: 15px;
+}
+.tag {
+  background-color: hsl(180, 31%, 95%);
+  color: hsl(180, 29%, 50%);
+  font-weight: 700;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.tag:hover {
+  background-color: hsl(180, 29%, 50%);
+  color: hsl(180, 31%, 95%);
+}
+
+@media (min-width: 800px) {
+  .bg-header {
+    background-image: url('./images/bg-header-desktop.svg');
+  }
+
+  .job__container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .job__container > img {
+    position:static;
+    width:auto;
+    left: 15px;
+    top: 0;
+    transform: translateY(0);
+  }
+
+  .description {
+    margin-top: 0;
+  }
+
+  .tags {
+    margin-top: 0;
+    border-top: none;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .filter__container {
+    padding: 20px 35px;
+  }
+  .job__container {
+    padding: 30px 35px;
+    margin-bottom: 20px;
+  }
+
+  .description > p:nth-child(2) {
+    font-size: 1.2rem;
+  }
+}
